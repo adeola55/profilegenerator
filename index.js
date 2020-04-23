@@ -45,8 +45,18 @@ inquirer.prompt([
     },
     {
         type:"input",
-        message:"what is your license",
+        message:"what are your licenses",
         name:"license"
+    },
+    {
+        type:"input",
+        message:"what are your contributions?",
+        name:"contributions"
+    },
+    {
+        type:"input",
+        message:"what were your tests?",
+        name:"tests"
     }
 ])
 .then(function(response){
@@ -68,6 +78,8 @@ inquirer.prompt([
     Installation: ${[userinput.installation]}
     Usage: ${[userinput.usage]}
     License: ${[userinput.license]}
+    Contributions: ${[userinput.contributions]}
+    Tests: ${[userinput.tests]}
     `
     return readmetext
 })
