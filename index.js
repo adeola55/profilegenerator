@@ -27,6 +27,16 @@ inquirer.prompt([
         type: "input",
         message:"what is your description?",
         name:"description"
+    },
+    {
+        type:"input",
+        message:"What is your table of content?",
+        name:"table of content"
+    },
+    {
+        type:"input",
+        message:"what were your installations?",
+        name:"installation"
     }
 ])
 .then(function(response){
@@ -44,6 +54,8 @@ inquirer.prompt([
     Public repo: ${[apiresponse.data.public_repos]}
     Project title: ${[userinput.project_title]}
     Description: ${[userinput.description]}
+    Table of content: ${[userinput.table_of_content]}
+    Installation: ${[userinput.installation]}
     `
     return readmetext
 })
