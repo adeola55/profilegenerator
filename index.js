@@ -57,6 +57,11 @@ inquirer.prompt([
         type:"input",
         message:"what were your tests?",
         name:"tests"
+    },
+    {
+        type:"input",
+        message:"Do you have any questions?",
+        name:"questions"
     }
 ])
 .then(function(response){
@@ -80,6 +85,7 @@ inquirer.prompt([
     License: ${[userinput.license]}
     Contributions: ${[userinput.contributions]}
     Tests: ${[userinput.tests]}
+    Questions: ${[userinput.questions]}
     `
     return readmetext
 })
