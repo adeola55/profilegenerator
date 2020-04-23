@@ -37,6 +37,16 @@ inquirer.prompt([
         type:"input",
         message:"what were your installations?",
         name:"installation"
+    },
+    {
+        type:"input",
+        message:"what is your usage?",
+        name:"usage"
+    },
+    {
+        type:"input",
+        message:"what is your license",
+        name:"license"
     }
 ])
 .then(function(response){
@@ -56,6 +66,8 @@ inquirer.prompt([
     Description: ${[userinput.description]}
     Table of content: ${[userinput.table_of_content]}
     Installation: ${[userinput.installation]}
+    Usage: ${[userinput.usage]}
+    License: ${[userinput.license]}
     `
     return readmetext
 })
