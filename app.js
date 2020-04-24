@@ -67,27 +67,44 @@ inquirer.prompt([
     userinput = response;
      return axios.get(`https://api.github.com/users/${response.github}`) 
 }).then(function(apiresponse){
-    console.log("API RESPONSE",apiresponse)
+    console.log("API RESPONSE",apiresponse.data)
     let  readmetext = `
-    #ABOUT THE AUTHOR
-    ##GITHUB USERNAME: ${apiresponse.data.login}
+    # ABOUT THE AUTHOR
+    
+    ## GITHUB USERNAME:** ${apiresponse.data.login} **
+    
     Email: ${userinput.email}
+    
     Following: ${apiresponse.data.following}
+    
     Followers: ${apiresponse.data.followers}
+    
     Public repo: ${[apiresponse.data.public_repos]}
 
-    #ABOUT THIS PROJECT
-    ### PROJECT1: ${userinput.url}
-    [![GitHub license]: (https://img.shields.io/badge/license-${userinput.license}-blue.svg)]
-     Project URL: https://github.com/${userinput.github}/${userinput.projectrepo}
-    Project title: ${[userinput.projecttitle]}
-    Description: ${[userinput.description]}
-    Installation: ${[userinput.installation]}
-    Usage: ${[userinput.usage]}
-     ${[userinput.license]}
-    NOTE to Contributors: ${[userinput.contributions]}
-    Tests: ${[userinput.tests]}
+    # ABOUT THIS PROJECT
+    * ### PROJECT1: ${userinput.url}
+       * ![GitHub license]: (https://img.shields.io/badge/license-${userinput.license}-blue.svg)
+
+
+      *  Project URL:[ Projecturl ] (https://github.com/${userinput.github}/${userinput.projectrepo})
     
+    
+      *  Project title: ${[userinput.projecttitle]}
+    
+    
+      *  Description: ${[userinput.description]}
+    
+    
+      *  Installation: ${[userinput.installation]}
+    
+    
+      *   Usage: ${[userinput.usage]}
+
+        
+      *   NOTE to Contributors: ${[userinput.contributions]}
+
+
+      *   Tests: ${[userinput.tests]}
     `
     return readmetext
 })
