@@ -71,7 +71,7 @@ inquirer.prompt([
     let  readmetext = `
 # ABOUT THE AUTHOR
     
-## GITHUB USERNAME:** ${apiresponse.data.login} **
+## GITHUB USERNAME: ${apiresponse.data.login}
     
 Email: ${userinput.email}
     
@@ -83,7 +83,11 @@ Public repo: ${[apiresponse.data.public_repos]}
 
 # ABOUT THIS PROJECT
  * ### PROJECT1: ${userinput.url}
+
+
  * ![GitHub license] (https://img.shields.io/badge/license-${userinput.license}-blue.svg)
+
+ 
  * *  Project URL:[ Projecturl ] (https://github.com/${userinput.github}/${userinput.projectrepo})
     
     

@@ -1,7 +1,7 @@
 
 # ABOUT THE AUTHOR
     
-## GITHUB USERNAME:** adeola55 **
+## GITHUB USERNAME: adeola55
     
 Email: kokobilo55@gmail.com
     
@@ -13,14 +13,18 @@ Public repo: 12
 
 # ABOUT THIS PROJECT
  * ### PROJECT1: undefined
+
+
  * ![GitHub license] (https://img.shields.io/badge/license-MIT-blue.svg)
+
+ 
  * *  Project URL:[ Projecturl ] (https://github.com/adeola55/profilegenerator)
     
     
  *  Project title: homework09
     
     
- *  Description: making README.md with node.js
+ *  Description: building README.md using node.js
     
     
  *  Installation: npm i
@@ -32,5 +36,5 @@ Public repo: 12
  *   NOTE to Contributors: needs node.js
 
 
- *   Tests: none
+ *   Tests: manual 
     
