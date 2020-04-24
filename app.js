@@ -69,42 +69,40 @@ inquirer.prompt([
 }).then(function(apiresponse){
     console.log("API RESPONSE",apiresponse.data)
     let  readmetext = `
-    # ABOUT THE AUTHOR
+# ABOUT THE AUTHOR
     
-    ## GITHUB USERNAME:** ${apiresponse.data.login} **
+## GITHUB USERNAME:** ${apiresponse.data.login} **
     
-    Email: ${userinput.email}
+Email: ${userinput.email}
     
-    Following: ${apiresponse.data.following}
+Following: ${apiresponse.data.following}
     
-    Followers: ${apiresponse.data.followers}
+Followers: ${apiresponse.data.followers}
     
-    Public repo: ${[apiresponse.data.public_repos]}
+Public repo: ${[apiresponse.data.public_repos]}
 
-    # ABOUT THIS PROJECT
-    * ### PROJECT1: ${userinput.url}
-       * ![GitHub license]: (https://img.shields.io/badge/license-${userinput.license}-blue.svg)
-
-
-      *  Project URL:[ Projecturl ] (https://github.com/${userinput.github}/${userinput.projectrepo})
+# ABOUT THIS PROJECT
+ * ### PROJECT1: ${userinput.url}
+ * ![GitHub license] (https://img.shields.io/badge/license-${userinput.license}-blue.svg)
+ * *  Project URL:[ Projecturl ] (https://github.com/${userinput.github}/${userinput.projectrepo})
     
     
-      *  Project title: ${[userinput.projecttitle]}
+ *  Project title: ${[userinput.projecttitle]}
     
     
-      *  Description: ${[userinput.description]}
+ *  Description: ${[userinput.description]}
     
     
-      *  Installation: ${[userinput.installation]}
+ *  Installation: ${[userinput.installation]}
     
     
-      *   Usage: ${[userinput.usage]}
+ *   Usage: ${[userinput.usage]}
 
         
-      *   NOTE to Contributors: ${[userinput.contributions]}
+ *   NOTE to Contributors: ${[userinput.contributions]}
 
 
-      *   Tests: ${[userinput.tests]}
+ *   Tests: ${[userinput.tests]}
     `
     return readmetext
 })
