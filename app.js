@@ -56,11 +56,6 @@ inquirer.prompt([
         name:"tests",
         default:"npm test"
     }
-    // ,{
-    //     type:"input",
-    //     message:"Do you have any questions?",
-    //     name:"questions"
-    // }
 ])
 .then(function(response){
     console.log(response)
@@ -84,10 +79,11 @@ Public repo: ${[apiresponse.data.public_repos]}
 # ABOUT THIS PROJECT
  * ### PROJECT1: ${userinput.url}
 
+ [![GitHub license](https://img.shields.io/badge/license-${userinput.license}-blue.svg)](https://github.com/${userinput.github}/${userinput.projectrepo})
 
  * ![GitHub license] (https://img.shields.io/badge/license-${userinput.license}-blue.svg)
 
- 
+
  * *  Project URL:[ Projecturl ] (https://github.com/${userinput.github}/${userinput.projectrepo})
     
     
