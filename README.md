@@ -25,7 +25,7 @@ Public repo: 12
  *  Project title: homework09
     
     
- *  Description: building README.md with node.js
+ *  Description: building README.md using node.js
     
     
  *  Installation: npm i
@@ -34,7 +34,7 @@ Public repo: 12
  *   Usage: none
 
         
- *   NOTE to Contributors: needs node.js
+ *   NOTE to Contributors: needs node.js to function 
 
 
  *   Tests: manual
