@@ -15,13 +15,13 @@ inquirer.prompt([
     },
     {
         type:"input",
-        message:"what is your project URL?",
-        name:"url",
+        message:"what is your project repo?",
+        name:"projectrepo",
     },
     {
         type: "input",
         message:"what is your project title?",
-        name:"project title"
+        name:"projecttitle"
     },
     {
         type: "input",
@@ -30,39 +30,37 @@ inquirer.prompt([
     },
     {
         type:"input",
-        message:"What is your table of content?",
-        name:"table of content"
-    },
-    {
-        type:"input",
         message:"what were your installations?",
-        name:"installation"
+        name:"installation",
+        default: "npm i"
     },
     {
         type:"input",
-        message:"what is your usage?",
+        message:"what is your usage terms?",
         name:"usage"
     },
     {
-        type:"input",
-        message:"what are your licenses",
+        type:"list",
+        message:"what are your licenses?",
+        choices: ["MIT","ISC","APCAHE 2.0","None"],
         name:"license"
     },
     {
         type:"input",
-        message:"what are your contributions?",
+        message:"what should your contributors know?",
         name:"contributions"
     },
     {
         type:"input",
         message:"what were your tests?",
-        name:"tests"
-    },
-    {
-        type:"input",
-        message:"Do you have any questions?",
-        name:"questions"
+        name:"tests",
+        default:"npm test"
     }
+    // ,{
+    //     type:"input",
+    //     message:"Do you have any questions?",
+    //     name:"questions"
+    // }
 ])
 .then(function(response){
     console.log(response)
@@ -71,21 +69,25 @@ inquirer.prompt([
 }).then(function(apiresponse){
     console.log("API RESPONSE",apiresponse)
     let  readmetext = `
-    # GITHUB USERNAME: ${apiresponse.data.login}
-    ### PROJECT1: ${userinput.url}
+    #ABOUT THE AUTHOR
+    ##GITHUB USERNAME: ${apiresponse.data.login}
     Email: ${userinput.email}
     Following: ${apiresponse.data.following}
     Followers: ${apiresponse.data.followers}
     Public repo: ${[apiresponse.data.public_repos]}
-    Project title: ${[userinput.project_title]}
+
+    #ABOUT THIS PROJECT
+    ### PROJECT1: ${userinput.url}
+    [![GitHub license]: (https://img.shields.io/badge/license-${userinput.license}-blue.svg)]
+     Project URL: https://github.com/${userinput.github}/${userinput.projectrepo}
+    Project title: ${[userinput.projecttitle]}
     Description: ${[userinput.description]}
-    Table of content: ${[userinput.table_of_content]}
     Installation: ${[userinput.installation]}
     Usage: ${[userinput.usage]}
-    License: ${[userinput.license]}
-    Contributions: ${[userinput.contributions]}
+     ${[userinput.license]}
+    NOTE to Contributors: ${[userinput.contributions]}
     Tests: ${[userinput.tests]}
-    Questions: ${[userinput.questions]}
+    
     `
     return readmetext
 })
